@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books store</title>
+    <style>
+        div{
+            border: black 2px dotted;
+            background-color: yellow;
+            width: 20%;
+            height: 500px;
+        }
+
+        body{
+            display:flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        span{
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    {% for books in books_list %}
+    <div>
+        <p><span> Название: </span>{{books.title}}</p>
+        <p><span> Подзаголовок: </span>{{books.subtitle}}</p>
+        <p><span> Описание: </span> {{books.description}}</p>
+        <p><span> Цена: </span> {{books.price}}</p>
+        <p><span> Жанр: </span> {{books.genre}}</p>
+        <p><span> Автор: </span> {{books.author}}</p>
+        <p><span> Год: </span> {{books.year}}</p>
+        <p><span> Дата добавления: </span> {{books.date}}</p>
+
+    </div>
+    {% endfor %}
+</body>
+</html>
