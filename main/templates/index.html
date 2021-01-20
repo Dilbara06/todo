@@ -23,107 +23,102 @@
 
         <div class="todo_container">
             <div class="todo_item">
-                 <div class="todo_item_header">
-                     <label class="checkbox_container">
-                        <input type="checkbox"/>
-                        <span class="checkmark"></span>
-                     </label>
-                     <h4>Купить молоко</h4>
-                 </div>
-                 <div class="todo_item_footer">
-                    <p>17.11.2020 <span>17:22</span></p>
-                    <div class="action_buttons">
-                        <img src="./icons/star2.png"/>
-                        <img src="./icons/delete1.png"/>
-                    </div>
-                 </div>
+              <div class="todo_item_header">
+                <label class="checkbox_container">
+                  <input type="checkbox" />
+                  <span class="checkmark"></span>
+                </label>
+                <h4>Купить молоко</h4>
+              </div>
+              <div class="todo_item_footer">
+                <p>17.11.2020 <span>17:22</span></p>
+                <div class="action_buttons">
+                    <img src="{% static './icons/unmarked.png' %}" />
+                    <img src="{% static './icons/delete.png' %}" />
+                </div>
+              </div>
             </div>
-
+            <div class="todo_item marked">
+              <div class="todo_item_header">
+                <label class="checkbox_container">
+                  <input type="checkbox" />
+                  <span class="checkmark"></span>
+                </label>
+                <h4>Купить молоко</h4>
+              </div>
+              <div class="todo_item_footer">
+                <p>17.11.2020 <span>17:22</span></p>
+                <div class="action_buttons">
+                    <img src="{% static './icons/marked.png' %}" />
+                    <img src="{% static './icons/delete.png' %}" />
+                </div>
+              </div>
+            </div>
+            <div class="todo_item done">
+              <div class="todo_item_header" s>
+                <label class="checkbox_container">
+                    <input type="checkbox" checked/>
+                    <span class="checkmark"></span>
+                  </label>
+                  <h4>Купить молоко</h4>
+              </div>
+              <div class="todo_item_footer">
+                <p>17.11.2020 <span>17:22</span></p>
+                <div class="action_buttons">
+                    <img src="{% static './icons/unmarked.png' %}" />
+                    <img src="{% static './icons/delete.png' %}" />
+                </div>
+              </div>
+            </div>
             <div class="todo_item marked">
                 <div class="todo_item_header">
-                    <label class="checkbox_container">
-                       <input type="checkbox"/>
-                       <span class="checkmark"></span>
-                    </label>
-                    <h4>Купить молоко</h4>
+                  <label class="checkbox_container">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                  </label>
+                  <h4>Купить молоко</h4>
                 </div>
                 <div class="todo_item_footer">
-                   <p>17.11.2020 <span>17:22</span></p>
-                   <div class="action_buttons">
-                       <img src="./icons/star_f1.png"/>
-                       <img src="./icons/delete1.png"/>
-                   </div>
+                  <p>17.11.2020 <span>17:22</span></p>
+                  <div class="action_buttons">
+                      <img src="{% static './icons/marked.png' %}" />
+                      <img src="{% static './icons/delete.png' %}" />
+                  </div>
                 </div>
-            </div>
-
-            <div class="todo_item done">
+              </div>
+              <div class="todo_item">
                 <div class="todo_item_header">
-                    <label class="checkbox_container">
-                       <input type="checkbox"/>
-                       <span class="checkmark"></span>
-                    </label>
-                    <h4>Купить молоко</h4>
+                  <label class="checkbox_container">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                  </label>
+                  <h4>Купить молоко</h4>
                 </div>
                 <div class="todo_item_footer">
-                   <p>17.11.2020 <span>17:22</span></p>
-                   <div class="action_buttons">
-                       <img src="./icons/star2.png"/>
-                       <img src="./icons/delete1.png"/>
-                   </div>
+                  <p>17.11.2020 <span>17:22</span></p>
+                  <div class="action_buttons">
+                      <img src="{% static './icons/unmarked.png' %}" />
+                      <img src="{% static './icons/delete.png' %}" />
+                  </div>
                 </div>
-            </div>
-
-            <div class="todo_item marked">
+              </div>
+              <div class="todo_item done">
                 <div class="todo_item_header">
-                    <label class="checkbox_container">
-                       <input type="checkbox"/>
-                       <span class="checkmark"></span>
-                    </label>
-                    <h4>Купить молоко</h4>
+                  <label class="checkbox_container">
+                    <input type="checkbox" checked/>
+                    <span class="checkmark"></span>
+                  </label>
+                  <h4>Купить молоко</h4>
                 </div>
                 <div class="todo_item_footer">
-                   <p>17.11.2020 <span>17:22</span></p>
-                   <div class="action_buttons">
-                       <img src="./icons/star_f1.png"/>
-                       <img src="./icons/delete1.png"/>
-                   </div>
+                  <p>17.11.2020 <span>17:22</span></p>
+                  <div class="action_buttons">
+                      <img src="{% static './icons/marked.png' %}" />
+                      <img src="{% static './icons/delete.png' %}" />
+                  </div>
                 </div>
-            </div>
-
-            <div class="todo_item">
-                <div class="todo_item_header">
-                    <label class="checkbox_container">
-                       <input type="checkbox"/>
-                       <span class="checkmark"></span>
-                    </label>
-                    <h4>Купить молоко</h4>
-                </div>
-                <div class="todo_item_footer">
-                   <p>17.11.2020 <span>17:22</span></p>
-                   <div class="action_buttons">
-                       <img src="./icons/star2.png"/>
-                       <img src="./icons/delete1.png"/>
-                   </div>
-                </div>
-            </div>
-
-            <div class="todo_item done">
-                <div class="todo_item_header">
-                    <label class="checkbox_container">
-                       <input type="checkbox"/>
-                       <span class="checkmark"></span>
-                    </label>
-                    <h4>Купить молоко</h4>
-                </div>
-                <div class="todo_item_footer">
-                   <p>17.11.2020 <span>17:22</span></p>
-                   <div class="action_buttons">
-                       <img src="./icons/star2.png"/>
-                       <img src="./icons/delete1.png"/>
-                   </div>
-                </div>
-            </div>
-        </div>
+              </div>
+          </div>
     </section>
     
 </body>
