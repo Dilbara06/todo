@@ -6,72 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books store</title>
-    <style>
-        div {
-            border: black 2px dotted;
-            background-color: yellow;
-            width: 20%;
-            height: 500px;
-            margin-top:20px;
-        }
-
-        .books_container {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            width: 100%;
-            
-
-        }
-
-        span {
-            font-weight: 900;
-        }
-
-        h1 {
-            text-align: center;
-            color: rebeccapurple;
-        }
-
-        .create_book {
-            padding: 12px 5px;
-            font-size: 18px;
-            width: 80%;
-            margin: 5px 40px;
-        }
-
-        .create_button {
-            padding: 12px 20px;
-            background-color: #CE9308;
-            border: 1px solid #CE9308;
-            color: white;
-            font-size: 18px;
-            text-transform: uppercase;
-            font-weight: bold;
-            border-radius: 3px;
-            cursor: pointer;
-            margin-left: 300px;
-
-        }
-
-
-
-        .create_button:active {
-            border: 1px solid #CE9308;
-            box-shadow: 2px 2px 5px 3px #FCE4EC;
-        }
-
-        .add_books {
-            border: blue 2px solid;
-            width: 70%;
-            margin: auto;
-            margin-bottom: 100px;
-            position: relative;
-            height: 600px;
-            background-color: silver;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'styles/books.css' %}">
 </head>
 
 <body>
@@ -96,22 +31,30 @@
             </form>
         </div>
     </section>
-    <h1>Каталог книг в наличии</h1>\
+    <h1 id="catalog">Каталог книг в наличии</h1>\
     <section class="books_container">
-
         {% for books in books_list %}
-        <div>
-            <p><span> Название: </span>{{books.title}}</p>
-            <p><span> Подзаголовок: </span>{{books.subtitle}}</p>
-            <p><span> Описание: </span> {{books.description}}</p>
-            <p><span> Цена: </span> {{books.price}}</p>
-            <p><span> Жанр: </span> {{books.genre}}</p>
-            <p><span> Автор: </span> {{books.author}}</p>
-            <p><span> Год: </span> {{books.year}}</p>
-            <p><span> Дата добавления: </span> {{books.date}}</p>
-
-        </div>
-        {% endfor %}
+            <div class="books_item
+            {% if books.is_favorite %}
+                marked
+            {% endif %}
+            ">
+                <div class="books_item_header">
+                    <a href="{% url 'details-books' books.id %}"> <h4>{{books.title}}</h4></a>
+                </div>
+                <div class="books_item_footer">
+                    <p>{{books.price}}</p>
+                    <div class="action_buttons">
+                        {% if books.is_favorite %}
+                            <a href="{% url 'unmark-books' books.id %}"> <img src="{% static './icons/marked.png' %}" /></a>
+                        {% else %}
+                            <a href="{% url 'mark-books' books.id %}"> <img src="{% static './icons/unmarked.png' %}" /></a>
+                        {% endif %}
+                        <a href="{% url 'delete-books' books.id %}"><img src="{% static './icons/delete.png' %}" /></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
     </section>
 
 </body>

@@ -14,6 +14,9 @@ def second(request):
     books_list=Books.objects.all()
     return render (request, "books.html", {"books_list":books_list})
 
+def detail(request):
+    return render (request, "books_detail.html")
+
 def third(request):
     return HttpResponse ("This is page test 3")
 
@@ -41,6 +44,41 @@ def delete_todo (request, id):
      todo=Todo.objects.get(id=id)
      todo.delete()
      return redirect(test)
+
+def mark_todo (request, id):
+    todo=Todo.objects.get(id=id)
+    todo.is_favorite=True
+    todo.save()
+    return redirect(test)
+
+def unmark_todo (request, id):
+    todo=Todo.objects.get(id=id)
+    todo.is_favorite=False
+    todo.save()
+    return redirect(test)
+
+def delete_books (request, id): 
+     books=Books.objects.get(id=id)
+     books.delete()
+     return redirect(second)
+
+def mark_books (request, id):
+    books=Books.objects.get(id=id)
+    books.is_favorite=True
+    books.save()
+    return redirect(second)
+
+def unmark_books (request, id):
+    books=Books.objects.get(id=id)
+    books.is_favorite=False
+    books.save()
+    return redirect(second)
+
+def BooksDetail (request, id): 
+     books=Books.objects.get(id=id)
+     return render (request, "books_detail.html")
+    
+
 
 
      

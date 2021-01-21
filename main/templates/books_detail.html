@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Детали книги </h1>
+    <p><span> Название: </span>{{books.title}}</p>
+    <p><span> Подзаголовок: </span>{{books.subtitle}}</p>
+    <p><span> Описание: </span> {{books.description}}</p>
+    <p><span> Цена: </span> {{books.price}}</p>
+    <p><span> Жанр: </span> {{books.genre}}</p>
+    <p><span> Автор: </span> {{books.author}}</p>
+    <p><span> Год: </span> {{books.year}}</p>
+    <p><span> Дата добавления: </span> {{books.date}}</p>
+</body>
+</html>
